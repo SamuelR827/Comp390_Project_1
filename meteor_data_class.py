@@ -1,5 +1,10 @@
+# Meteor data class
+# Initialize class and setup up instance variables for
+# each data field.
+
 class MeteorDataEntry:
-    def __init__(self, name, ident, nametype, recclass, mass, fall, year, reclat, reclong, geolocation, states, counties):
+    def __init__(self, name, ident, nametype, recclass, mass, fall,
+                 year, reclat, reclong, geolocation, states, counties):
         self.field_name = name
         self.field_ident = ident
         self.field_nametype = nametype
