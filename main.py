@@ -45,23 +45,18 @@ def main():
         entry_geolocation = meteor_entry[9]
         entry_states = meteor_entry[10]
         entry_counties = meteor_entry[11]
-        # Check if mass of meteor is None, if yes then skip meteor.
-        if entry_mass is None:
-            continue
-        # Check if mass > 2900000, if yes create a new meteor class by calling the class
+        # Check if mass > 2900000, and it is not 0 . If yes create a new meteor class by calling the class
         # with each corresponding field as a parameter. Then add the new meteor to the mass list.
-        elif entry_mass > 2900000:
+        if entry_mass > 2900000 and entry_mass != 0:
             meteor = meteor_data_class.MeteorDataEntry(entry_name, entry_ident, entry_nametype,
                                                        entry_recclass, entry_mass, entry_fall,
                                                        entry_year, entry_reclat, entry_reclong,
                                                        entry_geolocation, entry_states, entry_counties)
             dataset_mass.append(meteor)
-        # Check if year is None, if yes than skip meteor.
-        elif entry_year is None:
-            continue
-        # Check if year > 2013, if yes create a new meteor class by calling the class
+
+        # Check if year > 2013, and is not 0. If yes create a new meteor class by calling the class
         # with each corresponding field as a parameter. Then add the new meteor to the year list.
-        elif entry_year >= 2013:
+        elif entry_year >= 2013 and entry_year != 0:
             meteor = meteor_data_class.MeteorDataEntry(entry_name, entry_ident, entry_nametype,
                                                        entry_recclass, entry_mass, entry_fall,
                                                        entry_year, entry_reclat, entry_reclong,
